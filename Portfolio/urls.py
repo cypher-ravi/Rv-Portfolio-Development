@@ -6,7 +6,9 @@ from . views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home')
+    path('', home, name='home'),
+    path('contact/', include('core.urls',namespace='core')),
+
 ]
 
 if settings.DEBUG:

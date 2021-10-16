@@ -16,3 +16,7 @@ def contact_form(request, *args, **kwargs):
         messages.success(request,"Thanks for Your Message! Contact You Shortly.")
         return redirect('/')
     return render(request, 'index.html')
+
+
+def awareness_program_view(request):
+    return render(request, 'awareness_through_code.html')

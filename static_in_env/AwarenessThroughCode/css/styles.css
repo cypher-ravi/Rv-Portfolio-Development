@@ -12188,3 +12188,10 @@ border-color:#ffc20b;
   font-weight: normal;
   margin-top: 5px;
 }
+
+@media only screen and (max-width: 600px) {
+  .disp
+  {
+      display: none;
+  }
+}

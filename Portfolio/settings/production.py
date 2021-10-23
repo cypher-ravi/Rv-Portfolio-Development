@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['awarenessthroughcode.pythonanywhere.com/']
+ALLOWED_HOSTS = ['awarenessthroughcode.pythonanywhere.com']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

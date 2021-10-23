@@ -7,6 +7,9 @@ from django.conf import settings
 from django.http import HttpResponse, Http404
 
 from .utils import send_mail_to_me
+from .models import Service,Testimonial
+
+
 
 
 # Create your views here.
@@ -27,6 +30,12 @@ from .utils import send_mail_to_me
 
 
 def awareness_program_view(request):
+    services = Service.objects.all()
+    testimonials = Testimonial.objects.all()
+    context = {
+        'services':services,
+        'testimonials':testimonials,
+    }
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -42,7 +51,7 @@ def awareness_program_view(request):
         messages.success(request,"Thanks for Your Message! We'll Contact You Shortly.")
         send_mail_to_me(name,'ronniloreo@gmail.com',message,email,phone,extra_field="From ATC")
         return redirect('core:awareness-through-code-program')
-    return render(request, 'awareness_through_code.html')
+    return render(request, 'awareness_through_code.html',context)
 
 
 # def getpdf(request):  
@@ -54,3 +63,12 @@ def awareness_program_view(request):
 #             return response
 #     else:
 #         raise Http404
+
+
+def error_404(request, *args, **kwargs):
+        data = {}
+        return render(request,'404.html', data)
+
+def error_500(request, *args, **kwargs):
+        data = {}
+        return render(request,'500.html', data)

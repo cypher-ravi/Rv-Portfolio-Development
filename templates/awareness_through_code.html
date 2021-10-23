@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         <title>Awareness Through Code Program</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="{% static 'images/atc.png' %}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -238,13 +238,13 @@
                                 </div>
                                 <div class="price-box">
                                     <div class="title">Seminar/Webinar</div>
-                                    <h4 class="price"> ₹ 50/student</h4>
+                                    <h4 class="price"> Free</h4>
                                 </div>
                                 <ul class="features">
                                     <li class="true">Time: 1 Hour </li>
                                     <li class="true">Free Consulting for 10 Students</li>
-                                    <li class="true">Ebook</li>
-                                    <li class="true">Interested Students  in technology Workshop get 30% off</li>
+                                    <!-- <li class="true">Ebook</li> -->
+                                    <li class="true">Interested Students  in Full or Short courses get 30% off</li>
                                     <li class="true">Minimum 20 Students</li>
                                    
                                 </ul>
@@ -261,16 +261,16 @@
                                     <div class="icon-outer"><i class="fas fa-gem"></i></div>
                                 </div>
                                 <div class="price-box">
-                                    <div class="title">Technology Workshop</div>
-                                    <h4 class="price"> ₹ 150/student </h4>
+                                    <div class="title">Short Courses</div>
+                                    <h4 class="price"> ₹ 100/hour </h4>
                                     <p>Only for Python or Web dev.</p>
                                 </div>
                                 <ul class="features">
-                                    <li class="true">Python Workshop - 2 Hour</li>
-                                    <li class="true">Web development Workshop - 3 Hours</li>
+                                    <li class="true">Python Course - 12 Hours</li>
+                                    <!-- <li class="true">Web development Course - 24 Hours</li> -->
                                     <li class="true">Certificate</li>
-                                    <li class="true">Best 3 Student will get a chance to work with us</li>
-                                    <li class="true">Minimum 20 Students</li>
+                                    <li class="true">Best Students will get a chance to work with us</li>
+                                    <!-- <li class="true">Minimum 20 Students</li> -->
                                 </ul>
                                 <div class="btn-box">
                                     <a href="#contact" class="theme-btn">Contact</a>
@@ -294,7 +294,7 @@
                                     <li class="true">Certificate</li>
                                     <li class="true">In person classes</li>
                                     <li class="true">Minimum 20 Students</li>
-                                    <li class="true"><b>For Price Contact Us</b></li>
+                                    <!-- <li class="true"><b>For Price Contact Us</b></li> -->
                                 </ul>
                                 <div class="btn-box">
                                     <a href="#contact" class="theme-btn">Contact</a>
@@ -433,25 +433,18 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="owl-carousel client-testimonial-carousel">
+                            {% for testimonial in testimonials %}
+                            
                             <div class="single-testimonial-item">
-                                <p>It was my first class of python when I interact with you sir and I'm weak in my studies afterall you teach very well and I got good knowledge of python with your teaching way and I saw you are very humble nature teacher, if, somebody give me the chance for feedback than I give you the 5 star</p>
-                                <h3>Sumit Ruhal <span>B.C.A - Python Course</span></h3>
+                                <p>{{ testimonial.message }}</p>
+                                <h3>{{ testimonial.name }} <span>{{ testimonial.enrolled_course }}</span></h3>
                             </div>
-                            <div class="single-testimonial-item">
-                                <p>Taught us a language like python very easily we never got bored because you never let us bored. You teach us something new every day, new assignments, new ideas, new concepts. You also gave us very friendly environment where we used to ask anything without any hesitatio or you also try to understand each of us better
-                                    thank you so much sir</p>
-                                <h3>Rohit <span>B.C.A - Python Course</span></h3>
-                            </div>
-                            <div class="single-testimonial-item">
+                            {% endfor %}
+                            <!-- <div class="single-testimonial-item">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                     Eveniet ex labore id beatae molestiae, libero quis eum nam voluptates quidem.</p>
                                 <h3>Jane Doe <span>Land Broker</span></h3>
-                            </div>
-                            <div class="single-testimonial-item">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Eveniet ex labore id beatae molestiae, libero quis eum nam voluptates quidem.</p>
-                                <h3>Jane Doe <span>Land Broker</span></h3>
-                            </div>
+                            </div> -->
     
                         </div>
                     </div>
@@ -512,7 +505,7 @@
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/awarenessthroughcode" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/awarenessthroughcode" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/awareness-through-code-an-impact-oriented-tech-program-a33a80223/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>

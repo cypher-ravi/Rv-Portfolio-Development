@@ -10,6 +10,7 @@ urlpatterns = [
     path('', include('core.urls',namespace='core')),
 
 ]
+# handler500 = 'core.views.error_500'
 
 if settings.DEBUG:
     import debug_toolbar
